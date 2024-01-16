@@ -6,6 +6,7 @@ const app = express();
 app.use(cors());
 
 app.use('/static/images', express.static(__dirname + '/assets/images'));
+app.use('/static/subtitles', express.static(__dirname + '/assets/subtitles'));
 app.use(router);
 
 app.listen(5010, () => {
