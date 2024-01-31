@@ -3,7 +3,7 @@ const path = require('path');
 
 class StaticController {
 	getVideo(req, res) {
-		const videoPath = `assets/${req.params.id}.mp4`;
+		const videoPath = `assets/${req.params.id.includes('.') ? req.params.id : req.params.id + '.mp4'}`;
 		const videoStat = fs.statSync(videoPath);
 		const fileSize = videoStat.size;
 		const videoRange = req.headers.range;
